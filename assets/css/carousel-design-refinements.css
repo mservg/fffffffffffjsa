@@ -1,0 +1,720 @@
+/**
+ * Carousel Design Refinements for Jocelyne Saab Theme
+ * Modern, professional carousel styling based on contemporary design trends
+ * Author: Enhanced by AI Assistant
+ * Date: 2025-01-27
+ * Version: 2.0.0
+ */
+
+/* ========================================
+   MODERN CAROUSEL CONTAINER DESIGN
+   ======================================== */
+
+.films-carousel,
+.workshops-carousel,
+.stories-swiper,
+.film-stills-swiper,
+.workshop-gallery-swiper {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    background: var(--brand-white) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    margin: var(--spacing-xl) 0 !important;
+    padding: var(--spacing-lg) !important;
+}
+
+/* Enhanced swiper wrapper */
+.swiper-wrapper {
+    display: flex !important;
+    align-items: stretch !important;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.swiper-slide {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: transparent !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-4px) !important;
+}
+
+/* ========================================
+   REFINED NAVIGATION BUTTONS
+   ======================================== */
+
+.films-carousel .swiper-button-next,
+.films-carousel .swiper-button-prev,
+.workshops-carousel .swiper-button-next,
+.workshops-carousel .swiper-button-prev,
+.stories-swiper .swiper-button-next,
+.stories-swiper .swiper-button-prev,
+.film-stills-swiper .swiper-button-next,
+.film-stills-swiper .swiper-button-prev,
+.workshop-gallery-swiper .swiper-button-next,
+.workshop-gallery-swiper .swiper-button-prev {
+    width: 56px !important;
+    height: 56px !important;
+    margin-top: -28px !important;
+    background: var(--brand-white) !important;
+    border: 2px solid var(--gray-light) !important;
+    border-radius: 50% !important;
+    color: var(--brand-midnight) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    transition: all var(--transition-normal) !important;
+    z-index: 10 !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.films-carousel .swiper-button-next:hover,
+.films-carousel .swiper-button-prev:hover,
+.workshops-carousel .swiper-button-next:hover,
+.workshops-carousel .swiper-button-prev:hover,
+.stories-swiper .swiper-button-next:hover,
+.stories-swiper .swiper-button-prev:hover,
+.film-stills-swiper .swiper-button-next:hover,
+.film-stills-swiper .swiper-button-prev:hover,
+.workshop-gallery-swiper .swiper-button-next:hover,
+.workshop-gallery-swiper .swiper-button-prev:hover {
+    background: var(--brand-yellow) !important;
+    border-color: var(--brand-yellow) !important;
+    color: var(--brand-midnight) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 24px rgba(255, 215, 0, 0.3) !important;
+}
+
+.films-carousel .swiper-button-next::after,
+.films-carousel .swiper-button-prev::after,
+.workshops-carousel .swiper-button-next::after,
+.workshops-carousel .swiper-button-prev::after,
+.stories-swiper .swiper-button-next::after,
+.stories-swiper .swiper-button-prev::after,
+.film-stills-swiper .swiper-button-next::after,
+.film-stills-swiper .swiper-button-prev::after,
+.workshop-gallery-swiper .swiper-button-next::after,
+.workshop-gallery-swiper .swiper-button-prev::after {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+/* Position adjustments */
+.films-carousel .swiper-button-prev,
+.workshops-carousel .swiper-button-prev,
+.stories-swiper .swiper-button-prev,
+.film-stills-swiper .swiper-button-prev,
+.workshop-gallery-swiper .swiper-button-prev {
+    left: -28px !important;
+}
+
+.films-carousel .swiper-button-next,
+.workshops-carousel .swiper-button-next,
+.stories-swiper .swiper-button-next,
+.film-stills-swiper .swiper-button-next,
+.workshop-gallery-swiper .swiper-button-next {
+    right: -28px !important;
+}
+
+/* ========================================
+   MODERN PAGINATION DESIGN
+   ======================================== */
+
+.films-carousel .swiper-pagination,
+.workshops-carousel .swiper-pagination,
+.stories-swiper .swiper-pagination,
+.film-stills-swiper .swiper-pagination,
+.workshop-gallery-swiper .swiper-pagination {
+    bottom: -40px !important;
+    z-index: 10 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.films-carousel .swiper-pagination-bullet,
+.workshops-carousel .swiper-pagination-bullet,
+.stories-swiper .swiper-pagination-bullet,
+.film-stills-swiper .swiper-pagination-bullet,
+.workshop-gallery-swiper .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background: var(--gray-medium) !important;
+    opacity: 1 !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+    transition: all var(--transition-normal) !important;
+    cursor: pointer !important;
+}
+
+.films-carousel .swiper-pagination-bullet-active,
+.workshops-carousel .swiper-pagination-bullet-active,
+.stories-swiper .swiper-pagination-bullet-active,
+.film-stills-swiper .swiper-pagination-bullet-active,
+.workshop-gallery-swiper .swiper-pagination-bullet-active {
+    background: var(--brand-yellow) !important;
+    transform: scale(1.3) !important;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4) !important;
+}
+
+.films-carousel .swiper-pagination-bullet:hover,
+.workshops-carousel .swiper-pagination-bullet:hover,
+.stories-swiper .swiper-pagination-bullet:hover,
+.film-stills-swiper .swiper-pagination-bullet:hover,
+.workshop-gallery-swiper .swiper-pagination-bullet:hover {
+    background: var(--brand-blue) !important;
+    transform: scale(1.2) !important;
+}
+
+/* ========================================
+   ENHANCED CARD DESIGNS
+   ======================================== */
+
+.swiper-slide .film-card,
+.swiper-slide .workshop-card,
+.swiper-slide .news-card,
+.swiper-slide .partner-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: var(--brand-white) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    transition: all var(--transition-normal) !important;
+    border: 1px solid var(--gray-light) !important;
+}
+
+.swiper-slide .film-card:hover,
+.swiper-slide .workshop-card:hover,
+.swiper-slide .news-card:hover,
+.swiper-slide .partner-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--brand-yellow) !important;
+}
+
+/* Card image containers */
+.film-card-image,
+.workshop-card-image,
+.news-card-image,
+.partner-card-image {
+    position: relative !important;
+    height: 200px !important;
+    overflow: hidden !important;
+    background: var(--gray-light) !important;
+}
+
+.film-card-image img,
+.workshop-card-image img,
+.news-card-image img,
+.partner-card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transition: transform var(--transition-slow) !important;
+}
+
+.swiper-slide:hover .film-card-image img,
+.swiper-slide:hover .workshop-card-image img,
+.swiper-slide:hover .news-card-image img,
+.swiper-slide:hover .partner-card-image img {
+    transform: scale(1.05) !important;
+}
+
+/* Card content */
+.film-card-content,
+.workshop-card-content,
+.news-card-content,
+.partner-card-content {
+    padding: var(--spacing-md) !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.film-card-title,
+.workshop-card-title,
+.news-card-title,
+.partner-card-title {
+    font-family: var(--font-heading) !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    margin-bottom: var(--spacing-sm) !important;
+    color: var(--brand-midnight) !important;
+}
+
+.film-card-excerpt,
+.workshop-card-excerpt,
+.news-card-excerpt,
+.partner-card-excerpt {
+    color: var(--gray-dark) !important;
+    line-height: 1.6 !important;
+    flex: 1 !important;
+    margin-bottom: var(--spacing-sm) !important;
+}
+
+/* ========================================
+   NEWS CAROUSEL SPECIFIC REFINEMENTS
+   ======================================== */
+
+.news-carousel-wrapper {
+    position: relative !important;
+    margin: var(--spacing-xl) 0 !important;
+    padding: 0 80px !important;
+    background: linear-gradient(135deg, var(--brand-white) 0%, #f8f9fa 100%) !important;
+    border-radius: 20px !important;
+    padding-top: var(--spacing-lg) !important;
+    padding-bottom: var(--spacing-lg) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+.news-carousel {
+    display: flex !important;
+    gap: var(--spacing-lg) !important;
+    overflow-x: auto !important;
+    scroll-behavior: smooth !important;
+    padding: var(--spacing-md) 0 var(--spacing-xl) 0 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scroll-snap-type: x mandatory !important;
+}
+
+.news-carousel::-webkit-scrollbar {
+    display: none !important;
+}
+
+.news-card {
+    flex: 0 0 340px !important;
+    background: var(--brand-white) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    scroll-snap-align: start !important;
+    border: 2px solid transparent !important;
+}
+
+.news-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+    border-color: var(--brand-yellow) !important;
+}
+
+.news-card-image {
+    position: relative !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    background: linear-gradient(135deg, var(--gray-light) 0%, var(--gray-medium) 100%) !important;
+}
+
+.news-badge {
+    position: absolute !important;
+    top: var(--spacing-sm) !important;
+    left: var(--spacing-sm) !important;
+    background: linear-gradient(135deg, var(--brand-yellow) 0%, #f0c14b 100%) !important;
+    color: var(--brand-midnight) !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    border-radius: 20px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* ========================================
+   ENHANCED CAROUSEL ARROWS
+   ======================================== */
+
+.carousel-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: var(--brand-white) !important;
+    border: 2px solid var(--gray-light) !important;
+    border-radius: 50% !important;
+    width: 56px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: all var(--transition-normal) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    color: var(--brand-midnight) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+    background: var(--brand-yellow) !important;
+    border-color: var(--brand-yellow) !important;
+    color: var(--brand-midnight) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 6px 24px rgba(255, 215, 0, 0.3) !important;
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+    transform: translateY(-50%) scale(0.9) !important;
+    background: var(--gray-light) !important;
+    border-color: var(--gray-medium) !important;
+}
+
+.carousel-arrow-left {
+    left: 12px !important;
+}
+
+.carousel-arrow-right {
+    right: 12px !important;
+}
+
+.carousel-arrow::before {
+    content: '' !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-style: solid !important;
+}
+
+.carousel-arrow-left::before {
+    border-width: 8px 12px 8px 0 !important;
+    border-color: transparent currentColor transparent transparent !important;
+    margin-right: 2px !important;
+}
+
+.carousel-arrow-right::before {
+    border-width: 8px 0 8px 12px !important;
+    border-color: transparent transparent transparent currentColor !important;
+    margin-left: 2px !important;
+}
+
+/* ========================================
+   SECTION HEADERS AND TITLES
+   ======================================== */
+
+.section-title-centered {
+    font-family: var(--font-heading) !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: var(--spacing-xl) !important;
+    color: var(--brand-midnight) !important;
+    position: relative !important;
+}
+
+.section-title-centered::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--brand-yellow) 0%, var(--brand-blue) 100%) !important;
+    border-radius: 2px !important;
+}
+
+.section-title-enhanced {
+    font-family: var(--font-heading) !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    color: var(--brand-midnight) !important;
+    margin-bottom: var(--spacing-sm) !important;
+    position: relative !important;
+}
+
+.section-subtitle-enhanced {
+    font-size: 1.125rem !important;
+    color: var(--gray-dark) !important;
+    line-height: 1.6 !important;
+    margin-bottom: var(--spacing-lg) !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN IMPROVEMENTS
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .news-carousel-wrapper {
+        padding: 0 70px !important;
+    }
+    
+    .news-card {
+        flex: 0 0 320px !important;
+    }
+    
+    .carousel-arrow {
+        width: 52px !important;
+        height: 52px !important;
+    }
+    
+    .films-carousel .swiper-button-next,
+    .films-carousel .swiper-button-prev,
+    .workshops-carousel .swiper-button-next,
+    .workshops-carousel .swiper-button-prev {
+        width: 52px !important;
+        height: 52px !important;
+        margin-top: -26px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .news-carousel-wrapper {
+        padding: 0 60px !important;
+    }
+    
+    .news-card {
+        flex: 0 0 300px !important;
+    }
+    
+    .section-title-centered {
+        font-size: 2.2rem !important;
+    }
+    
+    .section-title-enhanced {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .films-carousel,
+    .workshops-carousel,
+    .stories-swiper,
+    .film-stills-swiper,
+    .workshop-gallery-swiper {
+        margin: var(--spacing-lg) 0 !important;
+        padding: var(--spacing-md) !important;
+        border-radius: 12px !important;
+    }
+    
+    .news-carousel-wrapper {
+        padding: 0 50px !important;
+        border-radius: 16px !important;
+    }
+    
+    .news-card {
+        flex: 0 0 280px !important;
+    }
+    
+    .news-card-image {
+        height: 180px !important;
+    }
+    
+    .carousel-arrow {
+        width: 48px !important;
+        height: 48px !important;
+    }
+    
+    .carousel-arrow-left {
+        left: 8px !important;
+    }
+    
+    .carousel-arrow-right {
+        right: 8px !important;
+    }
+    
+    .films-carousel .swiper-button-next,
+    .films-carousel .swiper-button-prev,
+    .workshops-carousel .swiper-button-next,
+    .workshops-carousel .swiper-button-prev {
+        width: 48px !important;
+        height: 48px !important;
+        margin-top: -24px !important;
+    }
+    
+    .films-carousel .swiper-button-prev,
+    .workshops-carousel .swiper-button-prev {
+        left: -24px !important;
+    }
+    
+    .films-carousel .swiper-button-next,
+    .workshops-carousel .swiper-button-next {
+        right: -24px !important;
+    }
+    
+    .section-title-centered {
+        font-size: 2rem !important;
+    }
+    
+    .section-title-enhanced {
+        font-size: 1.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-carousel-wrapper {
+        padding: 0 40px !important;
+        padding-top: var(--spacing-md) !important;
+        padding-bottom: var(--spacing-md) !important;
+    }
+    
+    .news-card {
+        flex: 0 0 260px !important;
+    }
+    
+    .news-card-image {
+        height: 160px !important;
+    }
+    
+    .carousel-arrow {
+        width: 44px !important;
+        height: 44px !important;
+    }
+    
+    .carousel-arrow::before {
+        border-width: 6px 8px 6px 0 !important;
+    }
+    
+    .carousel-arrow-left::before {
+        border-width: 6px 8px 6px 0 !important;
+    }
+    
+    .carousel-arrow-right::before {
+        border-width: 6px 0 6px 8px !important;
+    }
+    
+    .section-title-centered {
+        font-size: 1.75rem !important;
+    }
+    
+    .section-title-enhanced {
+        font-size: 1.5rem !important;
+    }
+    
+    .section-subtitle-enhanced {
+        font-size: 1rem !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY AND INTERACTION STATES
+   ======================================== */
+
+.carousel-arrow:focus,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    outline: 3px solid var(--brand-yellow) !important;
+    outline-offset: 2px !important;
+}
+
+.swiper-pagination-bullet:focus {
+    outline: 2px solid var(--brand-yellow) !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .carousel-arrow,
+    .swiper-button-next,
+    .swiper-button-prev {
+        border-width: 3px !important;
+    }
+    
+    .news-badge {
+        border: 2px solid var(--brand-midnight) !important;
+    }
+    
+    .swiper-slide .film-card,
+    .swiper-slide .workshop-card,
+    .swiper-slide .news-card,
+    .swiper-slide .partner-card {
+        border-width: 2px !important;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-arrow,
+    .news-card,
+    .swiper-slide,
+    .swiper-button-next,
+    .swiper-button-prev,
+    .swiper-pagination-bullet {
+        transition: none !important;
+    }
+    
+    .news-card:hover,
+    .swiper-slide:hover {
+        transform: none !important;
+    }
+    
+    .carousel-arrow:hover:not(:disabled) {
+        transform: translateY(-50%) !important;
+    }
+    
+    .swiper-slide:hover .film-card-image img,
+    .swiper-slide:hover .workshop-card-image img,
+    .swiper-slide:hover .news-card-image img,
+    .swiper-slide:hover .partner-card-image img {
+        transform: none !important;
+    }
+}
+
+/* ========================================
+   LOADING AND ERROR STATES
+   ======================================== */
+
+.carousel-loading {
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+    position: relative !important;
+}
+
+.carousel-loading::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin: -20px 0 0 -20px !important;
+    border: 3px solid var(--gray-light) !important;
+    border-top: 3px solid var(--brand-yellow) !important;
+    border-radius: 50% !important;
+    animation: spin 1s linear infinite !important;
+    z-index: 100 !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Print styles */
+@media print {
+    .carousel-arrow,
+    .swiper-button-next,
+    .swiper-button-prev,
+    .swiper-pagination {
+        display: none !important;
+    }
+    
+    .news-carousel {
+        overflow: visible !important;
+        display: block !important;
+    }
+    
+    .news-card,
+    .swiper-slide {
+        break-inside: avoid !important;
+        margin-bottom: var(--spacing-md) !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: 1px solid var(--gray-dark) !important;
+    }
+}
+

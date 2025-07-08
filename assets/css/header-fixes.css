@@ -1,0 +1,555 @@
+/**
+ * Comprehensive Header Fixes for Jocelyne Saab Theme
+ * Addresses consistency, transparency, and design issues
+ * Author: Enhanced by AI Assistant
+ * Date: 2025-01-27
+ * Version: 2.0.0
+ */
+
+/* ========================================
+   RESET AND BASE HEADER STYLES
+   ======================================== */
+
+/* Reset any conflicting header styles */
+.site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    padding: 1rem 0 !important;
+    transition: all var(--transition-normal) !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Scrolled state for all pages except home */
+.site-header.scrolled {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ========================================
+   HOME PAGE HEADER - FULLY TRANSPARENT
+   ======================================== */
+
+/* Make header fully transparent on home page */
+body.home .site-header {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep transparency even when scrolled on home page */
+body.home .site-header.scrolled {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ========================================
+   HEADER LAYOUT - CONSISTENT ACROSS ALL PAGES
+   ======================================== */
+
+.header-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 60px !important;
+    width: 100% !important;
+}
+
+.header-flex {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 60px !important;
+    width: 100% !important;
+}
+
+/* ========================================
+   HAMBURGER MENU BUTTON - IMPROVED DESIGN
+   ======================================== */
+
+.header-burger {
+    flex: 0 0 auto !important;
+    order: 1 !important;
+}
+
+.mobile-menu-toggle {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 0.75rem !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    transition: all var(--transition-normal) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
+    background: rgba(255, 215, 0, 0.2) !important;
+    border-color: var(--brand-yellow) !important;
+    transform: scale(1.05) !important;
+    outline: none !important;
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95) !important;
+}
+
+/* Improved hamburger icon */
+.hamburger-icon {
+    position: relative !important;
+    width: 24px !important;
+    height: 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.hamburger-icon .bar {
+    position: static !important;
+    width: 24px !important;
+    height: 3px !important;
+    background: var(--brand-white) !important;
+    border-radius: 2px !important;
+    transition: all var(--transition-normal) !important;
+    transform-origin: center !important;
+    margin: 0 !important;
+}
+
+/* Enhanced hamburger to X animation */
+body.menu-open .hamburger-icon {
+    justify-content: center !important;
+}
+
+body.menu-open .hamburger-icon .bar1 {
+    transform: rotate(45deg) translate(0, 9px) !important;
+    position: absolute !important;
+}
+
+body.menu-open .hamburger-icon .bar2 {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+}
+
+body.menu-open .hamburger-icon .bar3 {
+    transform: rotate(-45deg) translate(0, -9px) !important;
+    position: absolute !important;
+}
+
+/* ========================================
+   LOGO AND TITLE LAYOUT
+   ======================================== */
+
+/* Logo section */
+.header-logo {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    order: 2 !important;
+}
+
+.logo-placeholder {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: rgba(255, 215, 0, 0.9) !important;
+    border-radius: 50% !important;
+    transition: all var(--transition-normal) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.logo-placeholder:hover {
+    transform: scale(1.1) !important;
+    background: var(--brand-yellow) !important;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+}
+
+.logo-text {
+    font-family: var(--font-heading) !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: var(--brand-midnight) !important;
+    text-shadow: none !important;
+}
+
+/* Site title */
+.header-title {
+    flex: 0 0 auto !important;
+    order: 3 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.site-title-text {
+    font-family: var(--font-heading) !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: var(--brand-white) !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    transition: color var(--transition-normal) !important;
+    text-decoration: none !important;
+}
+
+.site-title-link {
+    text-decoration: none !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.site-title-link:hover .site-title-text {
+    color: var(--brand-yellow) !important;
+    text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* ========================================
+   MENU OVERLAY IMPROVEMENTS
+   ======================================== */
+
+.menu-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    z-index: 999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all var(--transition-slow) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow-y: auto !important;
+}
+
+.menu-overlay.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.menu-overlay-inner {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    padding: var(--spacing-xl) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+}
+
+/* Fix for weird newlines - clean up menu content */
+.menu-overlay-menu {
+    width: 100% !important;
+}
+
+.overlay-nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--spacing-md) !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.overlay-nav-menu li {
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.menu-overlay.open .overlay-nav-menu li {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Remove any unwanted whitespace and newlines */
+.overlay-nav-menu li::before,
+.overlay-nav-menu li::after,
+.menu-overlay-menu::before,
+.menu-overlay-menu::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Clean menu links */
+.overlay-nav-menu a {
+    display: block !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: var(--brand-white) !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    transition: all var(--transition-normal) !important;
+    border: 2px solid transparent !important;
+    border-radius: var(--border-radius) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+.overlay-nav-menu a::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent) !important;
+    transition: left var(--transition-slow) !important;
+}
+
+.overlay-nav-menu a:hover::before,
+.overlay-nav-menu a:focus::before {
+    left: 100% !important;
+}
+
+.overlay-nav-menu a:hover,
+.overlay-nav-menu a:focus {
+    color: var(--brand-yellow) !important;
+    border-color: var(--brand-yellow) !important;
+    background: rgba(255, 215, 0, 0.1) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .site-title-text {
+        font-size: 1.125rem !important;
+    }
+    
+    .logo-placeholder {
+        width: 55px !important;
+        height: 55px !important;
+    }
+    
+    .logo-text {
+        font-size: 1.375rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 0.75rem 0 !important;
+    }
+    
+    .header-flex {
+        min-height: 50px !important;
+    }
+    
+    .logo-placeholder {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem !important;
+    }
+    
+    .site-title-text {
+        font-size: 1rem !important;
+    }
+    
+    .mobile-menu-toggle {
+        min-width: 44px !important;
+        min-height: 44px !important;
+        padding: 0.625rem !important;
+    }
+    
+    .overlay-nav-menu a {
+        font-size: 1.25rem !important;
+        padding: var(--spacing-sm) var(--spacing-md) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-flex {
+        min-height: 45px !important;
+    }
+    
+    .logo-placeholder {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .logo-text {
+        font-size: 1.125rem !important;
+    }
+    
+    .site-title-text {
+        font-size: 0.875rem !important;
+    }
+    
+    .mobile-menu-toggle {
+        min-width: 40px !important;
+        min-height: 40px !important;
+        padding: 0.5rem !important;
+    }
+    
+    .hamburger-icon {
+        width: 20px !important;
+        height: 15px !important;
+    }
+    
+    .hamburger-icon .bar {
+        width: 20px !important;
+        height: 2px !important;
+    }
+    
+    .overlay-nav-menu a {
+        font-size: 1.125rem !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY AND SPECIAL STATES
+   ======================================== */
+
+/* Focus states */
+.mobile-menu-toggle:focus,
+.logo-link:focus,
+.site-title-link:focus {
+    outline: 2px solid var(--brand-yellow) !important;
+    outline-offset: 2px !important;
+}
+
+.overlay-nav-menu a:focus {
+    outline: 2px solid var(--brand-yellow) !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .site-header {
+        background: rgba(0, 0, 0, 0.95) !important;
+        border-bottom: 2px solid var(--brand-white) !important;
+    }
+    
+    .mobile-menu-toggle {
+        border-width: 3px !important;
+    }
+    
+    .hamburger-icon .bar {
+        background: var(--brand-white) !important;
+        box-shadow: 0 0 0 1px var(--brand-midnight) !important;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .mobile-menu-toggle,
+    .hamburger-icon .bar,
+    .logo-placeholder,
+    .site-title-text,
+    .menu-overlay,
+    .overlay-nav-menu li,
+    .overlay-nav-menu a::before {
+        transition: none !important;
+    }
+    
+    .mobile-menu-toggle:hover,
+    .logo-placeholder:hover,
+    .overlay-nav-menu a:hover {
+        transform: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .site-header {
+        position: static !important;
+        background: var(--brand-white) !important;
+        color: var(--brand-midnight) !important;
+        border-bottom: 2px solid var(--brand-midnight) !important;
+    }
+    
+    .mobile-menu-toggle,
+    .menu-overlay {
+        display: none !important;
+    }
+    
+    .site-title-text {
+        color: var(--brand-midnight) !important;
+    }
+}
+
+/* ========================================
+   FORCE OVERRIDE ANY CONFLICTING STYLES
+   ======================================== */
+
+/* Ensure these styles take precedence over any existing styles */
+body .site-header,
+body.home .site-header,
+body.page .site-header,
+body.single .site-header,
+body.archive .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+}
+
+/* Ensure proper spacing for content below header */
+.site-main {
+    padding-top: 80px !important;
+}
+
+body.home .site-main {
+    padding-top: 0 !important;
+}
+
+/* Clean up any unwanted margins or padding */
+.header-content,
+.header-flex {
+    margin: 0 !important;
+}
+
+.header-burger,
+.header-logo,
+.header-title {
+    margin: 0 !important;
+}
+
+/* Remove any conflicting background images or gradients */
+.site-header::before,
+.site-header::after {
+    display: none !important;
+}
+

@@ -1,0 +1,484 @@
+/*
+Theme Name: Jocelyne Saab
+Description: A comprehensive WordPress theme for filmmaker and artist Jocelyne Saab, featuring custom post types for films, news, workshops, publications, partners, and events. Built with modern web standards, accessibility compliance, and multilingual support. Enhanced with minimalist black/white design and blue/yellow accents.
+Version: 2.0.0
+Author: Karl Serag - Enhanced by AI Assistant
+Author URI: https://github.com/karlserag
+Text Domain: saab
+Domain Path: /languages
+Requires at least: 5.9
+Tested up to: 6.4
+Requires PHP: 8.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-post-type, film, artist, portfolio, multilingual, accessibility-ready, block-editor-ready, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, rtl-language-support, theme-options, threaded-comments, translation-ready, minimalist, black-white, professional
+*/
+
+/* ========================================
+   FONT IMPORTS
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ========================================
+   MAIN STYLES IMPORT ORDER
+   Critical: Order matters for proper cascading
+   ======================================== */
+
+/* 1. Base styles and variables */
+@import url('./assets/css/main.css');
+
+/* 2. Enhanced general styles */
+@import url('./assets/css/enhanced-styles.css');
+
+/* 3. Header fixes (must come after base styles) */
+@import url('./assets/css/header-fixes-v2.css');
+
+/* 4. Hero section fixes */
+@import url('./assets/css/hero-fixes-v2.css');
+
+/* 5. Carousel design refinements */
+@import url('./assets/css/carousel-design-refinements-v2.css');
+
+/* 6. General polish and consistency (final layer) */
+@import url('./assets/css/general-polish-v2.css');
+
+/* ========================================
+   THEME-SPECIFIC OVERRIDES
+   Final overrides to ensure consistency
+   ======================================== */
+
+/* Ensure WordPress admin bar compatibility */
+.admin-bar .site-header {
+  top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar .site-header {
+    top: 46px !important;
+  }
+}
+
+/* WordPress block editor compatibility */
+.wp-block-group {
+  margin-bottom: var(--spacing-xl) !important;
+}
+
+.wp-block-columns {
+  margin-bottom: var(--spacing-xl) !important;
+}
+
+/* Ensure consistent WordPress classes */
+.alignwide {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: calc(100vw - 2rem) !important;
+  max-width: 1200px !important;
+}
+
+.alignfull {
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  width: 100vw !important;
+  max-width: none !important;
+}
+
+/* Theme-specific WordPress improvements */
+.wp-block-separator {
+  border: none !important;
+  height: 2px !important;
+  background: var(--gray-300) !important;
+  margin: var(--spacing-2xl) auto !important;
+  width: 100px !important;
+}
+
+.wp-block-quote {
+  border-left: 4px solid var(--brand-blue) !important;
+  padding-left: var(--spacing-lg) !important;
+  margin: var(--spacing-xl) 0 !important;
+  font-style: italic !important;
+  color: var(--gray-700) !important;
+}
+
+.wp-block-quote cite {
+  color: var(--gray-500) !important;
+  font-size: 0.9rem !important;
+  font-style: normal !important;
+}
+
+/* Custom post type styling */
+.post-type-film .entry-header,
+.post-type-news .entry-header,
+.post-type-screening .entry-header,
+.post-type-training_workshop .entry-header,
+.post-type-publication .entry-header,
+.post-type-partner .entry-header {
+  border-bottom: 1px solid var(--gray-200) !important;
+  padding-bottom: var(--spacing-xl) !important;
+  margin-bottom: var(--spacing-2xl) !important;
+}
+
+/* Ensure theme consistency for custom elements */
+.saab-meta {
+  font-size: 0.9rem !important;
+  color: var(--gray-600) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+.saab-badge {
+  display: inline-block !important;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+  background: var(--brand-black) !important;
+  color: var(--brand-white) !important;
+  border-radius: var(--border-radius) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.saab-badge.featured {
+  background: var(--brand-blue) !important;
+}
+
+.saab-badge.highlight {
+  background: var(--brand-yellow) !important;
+  color: var(--brand-black) !important;
+}
+
+/* Language switcher consistency */
+.language-switcher {
+  display: flex !important;
+  gap: var(--spacing-sm) !important;
+  align-items: center !important;
+}
+
+.language-switcher a {
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+  border: 1px solid var(--gray-300) !important;
+  border-radius: var(--border-radius) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.language-switcher a:hover,
+.language-switcher a.current-lang {
+  background: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+  color: var(--brand-white) !important;
+}
+
+/* Search form styling */
+.search-form {
+  display: flex !important;
+  gap: var(--spacing-sm) !important;
+  max-width: 400px !important;
+  margin: var(--spacing-lg) auto !important;
+}
+
+.search-form input[type="search"] {
+  flex-grow: 1 !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border: 2px solid var(--gray-300) !important;
+  border-radius: var(--border-radius) !important;
+  margin: 0 !important;
+}
+
+.search-form button {
+  padding: var(--spacing-sm) var(--spacing-lg) !important;
+  background: var(--brand-black) !important;
+  color: var(--brand-white) !important;
+  border: 2px solid var(--brand-black) !important;
+  border-radius: var(--border-radius) !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+}
+
+.search-form button:hover {
+  background: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+}
+
+/* Archive and taxonomy pages */
+.archive-meta {
+  text-align: center !important;
+  margin-bottom: var(--spacing-2xl) !important;
+  padding: var(--spacing-xl) 0 !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+}
+
+.archive-count {
+  font-size: 0.9rem !important;
+  color: var(--gray-600) !important;
+  margin-top: var(--spacing-sm) !important;
+}
+
+/* Social media links */
+.social-links {
+  display: flex !important;
+  gap: var(--spacing-md) !important;
+  justify-content: center !important;
+  margin: var(--spacing-xl) 0 !important;
+}
+
+.social-links a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  background: var(--gray-100) !important;
+  border-radius: 50% !important;
+  color: var(--brand-black) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.social-links a:hover {
+  background: var(--brand-blue) !important;
+  color: var(--brand-white) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Footer consistency */
+.site-footer {
+  background: var(--brand-black) !important;
+  color: var(--brand-white) !important;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl) !important;
+  margin-top: var(--spacing-4xl) !important;
+}
+
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6 {
+  color: var(--brand-white) !important;
+}
+
+.site-footer a {
+  color: var(--gray-300) !important;
+}
+
+.site-footer a:hover {
+  color: var(--brand-yellow) !important;
+}
+
+/* Error pages */
+.error-404 .entry-header,
+.no-results .entry-header {
+  text-align: center !important;
+  padding: var(--spacing-4xl) 0 !important;
+}
+
+.error-404 .entry-title,
+.no-results .entry-title {
+  font-size: 4rem !important;
+  color: var(--gray-400) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+.error-404 .entry-content,
+.no-results .entry-content {
+  text-align: center !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+/* Comments section */
+.comments-area {
+  margin-top: var(--spacing-3xl) !important;
+  padding-top: var(--spacing-2xl) !important;
+  border-top: 1px solid var(--gray-200) !important;
+}
+
+.comment-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.comment-list .comment {
+  margin-bottom: var(--spacing-xl) !important;
+  padding: var(--spacing-lg) !important;
+  background: var(--gray-100) !important;
+  border-radius: var(--border-radius-lg) !important;
+}
+
+/* Widget areas */
+.widget {
+  margin-bottom: var(--spacing-2xl) !important;
+}
+
+.widget-title {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: var(--spacing-lg) !important;
+  color: var(--brand-black) !important;
+}
+
+.widget ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.widget ul li {
+  padding: var(--spacing-xs) 0 !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+}
+
+.widget ul li:last-child {
+  border-bottom: none !important;
+}
+
+/* Ensure all elements use theme fonts */
+* {
+  font-family: inherit !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.btn, button,
+input[type="submit"],
+input[type="button"] {
+  font-family: var(--font-heading) !important;
+}
+
+body,
+p, span, div,
+input, textarea, select,
+.entry-content {
+  font-family: var(--font-body) !important;
+}
+
+/* Final performance optimizations */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+video {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure proper focus states for accessibility */
+*:focus {
+  outline: 3px solid var(--brand-blue) !important;
+  outline-offset: 2px !important;
+}
+
+/* Remove outline for mouse users */
+.mouse-user *:focus {
+  outline: none !important;
+}
+
+/* Print optimizations */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .site-header,
+  .site-footer,
+  .menu-overlay,
+  .btn,
+  button {
+    display: none !important;
+  }
+  
+  .site-main {
+    padding-top: 0 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+  }
+  
+  .section {
+    page-break-inside: avoid !important;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")" !important;
+  }
+}
+
+/* ========================================
+   FINAL CONSISTENCY CHECKS
+   Ensure no conflicts and proper inheritance
+   ======================================== */
+
+/* Reset any WordPress core conflicts */
+.wp-core-ui,
+.wp-admin {
+  font-family: var(--font-body) !important;
+}
+
+/* Ensure proper cascade for theme elements */
+.saab-theme * {
+  box-sizing: border-box !important;
+}
+
+/* Final z-index management */
+.site-header { z-index: 1000 !important; }
+.menu-overlay { z-index: 999 !important; }
+.hero-section { z-index: 1 !important; }
+.modal { z-index: 1001 !important; }
+.tooltip { z-index: 1002 !important; }
+
+/* Ensure theme works with popular plugins */
+.wpcf7-form input,
+.wpcf7-form textarea,
+.wpcf7-form select {
+  width: 100% !important;
+  padding: var(--spacing-md) !important;
+  border: 2px solid var(--gray-300) !important;
+  border-radius: var(--border-radius) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+.wpcf7-form input[type="submit"] {
+  background: var(--brand-black) !important;
+  color: var(--brand-white) !important;
+  border: 2px solid var(--brand-black) !important;
+  cursor: pointer !important;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  background: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+}
+
+/* Yoast SEO breadcrumbs */
+.yoast-breadcrumb {
+  margin-bottom: var(--spacing-lg) !important;
+  font-size: 0.9rem !important;
+  color: var(--gray-600) !important;
+}
+
+.yoast-breadcrumb a {
+  color: var(--brand-blue) !important;
+}
+
+.yoast-breadcrumb a:hover {
+  color: var(--brand-yellow) !important;
+}
+
+/* Final theme version identifier */
+body::before {
+  content: 'Jocelyne Saab Theme v2.0.0' !important;
+  position: fixed !important;
+  bottom: -100px !important;
+  left: -100px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}

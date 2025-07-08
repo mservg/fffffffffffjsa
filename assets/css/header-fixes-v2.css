@@ -1,0 +1,850 @@
+/**
+ * Header Fixes for Jocelyne Saab Theme - Version 2
+ * Complete header redesign with minimalist black/white scheme
+ * Author: Enhanced by AI Assistant
+ * Date: 2025-01-27
+ * Version: 2.0.0
+ */
+
+/* ========================================
+   HEADER RESET AND BASE STYLES
+   ======================================== */
+
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: var(--z-header) !important;
+  padding: 1rem 0 !important;
+  transition: all var(--transition-normal) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ========================================
+   HOME PAGE HEADER - FULLY TRANSPARENT
+   ======================================== */
+
+body.home .site-header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Header becomes semi-transparent when scrolled on home page */
+body.home .site-header.scrolled {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ========================================
+   HEADER LAYOUT - CONSISTENT ACROSS ALL PAGES
+   ======================================== */
+
+.header-content,
+.header-flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 70px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container {
+  max-width: var(--container-max-width) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--container-padding) !important;
+}
+
+/* ========================================
+   HAMBURGER MENU BUTTON - REDESIGNED
+   ======================================== */
+
+.header-burger {
+  flex: 0 0 auto !important;
+  order: 1 !important;
+  margin: 0 !important;
+}
+
+.mobile-menu-toggle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 60px !important;
+  height: 60px !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 2px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: all var(--transition-normal) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
+  background: rgba(0, 0, 255, 0.1) !important;
+  border-color: var(--brand-blue) !important;
+  transform: scale(1.05) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(0, 0, 255, 0.2) !important;
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.95) !important;
+}
+
+/* Home page hamburger styling */
+body.home .mobile-menu-toggle {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.home .mobile-menu-toggle:hover,
+body.home .mobile-menu-toggle:focus {
+  background: rgba(255, 215, 0, 0.2) !important;
+  border-color: var(--brand-yellow) !important;
+}
+
+/* ========================================
+   HAMBURGER ICON DESIGN
+   ======================================== */
+
+.hamburger-icon {
+  position: relative !important;
+  width: 28px !important;
+  height: 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.hamburger-icon .bar {
+  display: block !important;
+  width: 28px !important;
+  height: 3px !important;
+  background: var(--brand-black) !important;
+  border-radius: 2px !important;
+  transition: all var(--transition-normal) !important;
+  transform-origin: center !important;
+  position: relative !important;
+}
+
+/* Home page hamburger icon */
+body.home .hamburger-icon .bar {
+  background: var(--brand-white) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Menu open state animation */
+body.menu-open .hamburger-icon {
+  justify-content: center !important;
+}
+
+body.menu-open .hamburger-icon .bar1 {
+  transform: rotate(45deg) translate(0, 11px) !important;
+  background: var(--brand-yellow) !important;
+}
+
+body.menu-open .hamburger-icon .bar2 {
+  opacity: 0 !important;
+  transform: scale(0) !important;
+}
+
+body.menu-open .hamburger-icon .bar3 {
+  transform: rotate(-45deg) translate(0, -11px) !important;
+  background: var(--brand-yellow) !important;
+}
+
+/* ========================================
+   LOGO AND SITE TITLE
+   ======================================== */
+
+.header-logo {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  order: 2 !important;
+  margin: 0 !important;
+}
+
+.logo-link {
+  text-decoration: none !important;
+  transition: transform var(--transition-normal) !important;
+}
+
+.logo-link:hover {
+  transform: scale(1.05) !important;
+}
+
+.logo-placeholder {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 70px !important;
+  height: 70px !important;
+  background: linear-gradient(135deg, var(--brand-black) 0%, var(--gray-800) 100%) !important;
+  border-radius: 50% !important;
+  transition: all var(--transition-normal) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  border: 3px solid rgba(255, 255, 255, 0.2) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.logo-placeholder::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+  transition: left var(--transition-slow) !important;
+}
+
+.logo-placeholder:hover::before {
+  left: 100% !important;
+}
+
+.logo-placeholder:hover {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-black) 100%) !important;
+  transform: rotate(5deg) scale(1.1) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 255, 0.3) !important;
+  border-color: var(--brand-blue) !important;
+}
+
+.logo-text {
+  font-family: var(--font-heading) !important;
+  font-size: 1.8rem !important;
+  font-weight: 900 !important;
+  color: var(--brand-white) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+  letter-spacing: -0.02em !important;
+  z-index: 2 !important;
+  position: relative !important;
+}
+
+/* Home page logo styling */
+body.home .logo-placeholder {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ========================================
+   SITE TITLE
+   ======================================== */
+
+.header-title {
+  flex: 0 0 auto !important;
+  order: 3 !important;
+  margin: 0 !important;
+}
+
+.site-title-link {
+  text-decoration: none !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.site-title-text {
+  font-family: var(--font-heading) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: var(--brand-black) !important;
+  transition: all var(--transition-normal) !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+
+.site-title-link:hover .site-title-text {
+  color: var(--brand-blue) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Home page site title */
+body.home .site-title-text {
+  color: var(--brand-white) !important;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.home .site-title-link:hover .site-title-text {
+  color: var(--brand-yellow) !important;
+  text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.7) !important;
+}
+
+/* ========================================
+   MENU OVERLAY - CLEAN DESIGN
+   ======================================== */
+
+.menu-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(33, 37, 41, 0.95) 50%,
+    rgba(0, 0, 0, 0.98) 100%) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  z-index: calc(var(--z-header) - 1) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow-y: auto !important;
+}
+
+.menu-overlay.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.menu-overlay-inner {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 800px !important;
+  padding: var(--spacing-4xl) var(--spacing-2xl) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  text-align: center !important;
+}
+
+/* ========================================
+   MENU NAVIGATION
+   ======================================== */
+
+.menu-overlay-menu {
+  width: 100% !important;
+  margin-bottom: var(--spacing-3xl) !important;
+}
+
+.overlay-nav-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--spacing-xl) !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.overlay-nav-menu li {
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.menu-overlay.open .overlay-nav-menu li {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger animation delays */
+.menu-overlay.open .overlay-nav-menu li:nth-child(1) { transition-delay: 0.1s !important; }
+.menu-overlay.open .overlay-nav-menu li:nth-child(2) { transition-delay: 0.2s !important; }
+.menu-overlay.open .overlay-nav-menu li:nth-child(3) { transition-delay: 0.3s !important; }
+.menu-overlay.open .overlay-nav-menu li:nth-child(4) { transition-delay: 0.4s !important; }
+.menu-overlay.open .overlay-nav-menu li:nth-child(5) { transition-delay: 0.5s !important; }
+.menu-overlay.open .overlay-nav-menu li:nth-child(6) { transition-delay: 0.6s !important; }
+
+/* ========================================
+   MENU LINKS STYLING
+   ======================================== */
+
+.overlay-nav-menu a {
+  display: block !important;
+  padding: var(--spacing-lg) var(--spacing-2xl) !important;
+  font-family: var(--font-heading) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--brand-white) !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  transition: all var(--transition-normal) !important;
+  border: 2px solid transparent !important;
+  border-radius: var(--border-radius-lg) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.overlay-nav-menu a::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+  transition: left var(--transition-slow) !important;
+  z-index: 1 !important;
+}
+
+.overlay-nav-menu a:hover::before,
+.overlay-nav-menu a:focus::before {
+  left: 100% !important;
+}
+
+.overlay-nav-menu a:hover,
+.overlay-nav-menu a:focus {
+  color: var(--brand-black) !important;
+  background: linear-gradient(135deg, var(--brand-yellow) 0%, #FFA500 100%) !important;
+  border-color: var(--brand-yellow) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4) !important;
+  outline: none !important;
+}
+
+.overlay-nav-menu a span {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* ========================================
+   LANGUAGE SWITCHER
+   ======================================== */
+
+.menu-language-switcher {
+  display: flex !important;
+  gap: var(--spacing-md) !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin-top: var(--spacing-2xl) !important;
+}
+
+.menu-language-switcher a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--spacing-sm) !important;
+  padding: var(--spacing-sm) var(--spacing-lg) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--brand-white) !important;
+  text-decoration: none !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transition: all var(--transition-normal) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.menu-language-switcher a:hover,
+.menu-language-switcher a.current-lang {
+  background: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+  color: var(--brand-white) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ========================================
+   CLOSE BUTTON
+   ======================================== */
+
+.menu-overlay-close {
+  position: absolute !important;
+  top: var(--spacing-xl) !important;
+  right: var(--spacing-xl) !important;
+  width: 60px !important;
+  height: 60px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all var(--transition-normal) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.menu-overlay-close:hover,
+.menu-overlay-close:focus {
+  background: rgba(255, 0, 0, 0.2) !important;
+  border-color: #ff0000 !important;
+  transform: scale(1.1) !important;
+  outline: none !important;
+}
+
+.close-icon {
+  position: relative !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.close-line {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 24px !important;
+  height: 2px !important;
+  background: var(--brand-white) !important;
+  border-radius: 1px !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.close-line1 {
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+.close-line2 {
+  transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
+
+.menu-overlay-close:hover .close-line {
+  background: #ff0000 !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1199px) {
+  .site-header {
+    padding: 0.875rem 0 !important;
+  }
+  
+  .header-content,
+  .header-flex {
+    min-height: 65px !important;
+  }
+  
+  .logo-placeholder {
+    width: 65px !important;
+    height: 65px !important;
+  }
+  
+  .logo-text {
+    font-size: 1.6rem !important;
+  }
+  
+  .site-title-text {
+    font-size: 1.3rem !important;
+  }
+  
+  .overlay-nav-menu a {
+    font-size: 1.8rem !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .site-header {
+    padding: 0.75rem 0 !important;
+  }
+  
+  .header-content,
+  .header-flex {
+    min-height: 60px !important;
+  }
+  
+  .mobile-menu-toggle {
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  .logo-placeholder {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem !important;
+  }
+  
+  .site-title-text {
+    font-size: 1.2rem !important;
+  }
+  
+  .overlay-nav-menu a {
+    font-size: 1.6rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    padding: 0.625rem 0 !important;
+  }
+  
+  .header-content,
+  .header-flex {
+    min-height: 55px !important;
+  }
+  
+  .mobile-menu-toggle {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .hamburger-icon {
+    width: 24px !important;
+    height: 18px !important;
+  }
+  
+  .hamburger-icon .bar {
+    width: 24px !important;
+    height: 2.5px !important;
+  }
+  
+  .logo-placeholder {
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem !important;
+  }
+  
+  .site-title-text {
+    font-size: 1.1rem !important;
+  }
+  
+  .overlay-nav-menu a {
+    font-size: 1.4rem !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+  }
+  
+  .menu-overlay-inner {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .site-header {
+    padding: 0.5rem 0 !important;
+  }
+  
+  .header-content,
+  .header-flex {
+    min-height: 50px !important;
+  }
+  
+  .mobile-menu-toggle {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .hamburger-icon {
+    width: 22px !important;
+    height: 16px !important;
+  }
+  
+  .hamburger-icon .bar {
+    width: 22px !important;
+    height: 2px !important;
+  }
+  
+  .logo-placeholder {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem !important;
+  }
+  
+  .site-title-text {
+    font-size: 1rem !important;
+  }
+  
+  .overlay-nav-menu a {
+    font-size: 1.2rem !important;
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+  }
+  
+  .menu-overlay-inner {
+    padding: var(--spacing-lg) var(--spacing-md) !important;
+  }
+  
+  .menu-overlay-close {
+    top: var(--spacing-lg) !important;
+    right: var(--spacing-lg) !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .close-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  .close-line {
+    width: 20px !important;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY AND PERFORMANCE
+   ======================================== */
+
+/* Focus states */
+.mobile-menu-toggle:focus,
+.logo-link:focus,
+.site-title-link:focus {
+  outline: 3px solid var(--brand-blue) !important;
+  outline-offset: 3px !important;
+}
+
+.overlay-nav-menu a:focus,
+.menu-language-switcher a:focus,
+.menu-overlay-close:focus {
+  outline: 3px solid var(--brand-yellow) !important;
+  outline-offset: 3px !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .site-header {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-bottom: 3px solid var(--brand-black) !important;
+  }
+  
+  body.home .site-header.scrolled {
+    background: rgba(0, 0, 0, 0.98) !important;
+    border-bottom: 3px solid var(--brand-white) !important;
+  }
+  
+  .mobile-menu-toggle {
+    border-width: 3px !important;
+  }
+  
+  .logo-placeholder {
+    border-width: 4px !important;
+  }
+  
+  .overlay-nav-menu a {
+    border-width: 3px !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .mobile-menu-toggle,
+  .hamburger-icon .bar,
+  .logo-placeholder,
+  .site-title-text,
+  .menu-overlay,
+  .overlay-nav-menu li,
+  .overlay-nav-menu a::before,
+  .logo-placeholder::before {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .mobile-menu-toggle:hover,
+  .logo-placeholder:hover,
+  .overlay-nav-menu a:hover,
+  .menu-overlay-close:hover {
+    transform: none !important;
+  }
+  
+  .overlay-nav-menu li {
+    transition-delay: 0s !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header {
+    position: static !important;
+    background: var(--brand-white) !important;
+    color: var(--brand-black) !important;
+    border-bottom: 2px solid var(--brand-black) !important;
+    box-shadow: none !important;
+  }
+  
+  .mobile-menu-toggle,
+  .menu-overlay {
+    display: none !important;
+  }
+  
+  .site-title-text {
+    color: var(--brand-black) !important;
+    text-shadow: none !important;
+  }
+  
+  .logo-placeholder {
+    background: var(--brand-black) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ========================================
+   BODY CLASSES FOR MENU STATE
+   ======================================== */
+
+body.menu-open {
+  overflow: hidden !important;
+}
+
+body.menu-open .menu-overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ========================================
+   CLEANUP AND OVERRIDES
+   ======================================== */
+
+/* Ensure proper content spacing */
+.site-main {
+  padding-top: 90px !important;
+}
+
+body.home .site-main {
+  padding-top: 0 !important;
+}
+
+/* Remove any unwanted content or whitespace */
+.menu-overlay-menu *::before,
+.menu-overlay-menu *::after {
+  content: '' !important;
+}
+
+/* Clean up any PHP-generated whitespace */
+.overlay-nav-menu li:empty {
+  display: none !important;
+}
+
+/* Force override any conflicting styles */
+.site-header * {
+  box-sizing: border-box !important;
+}
+
+/* Ensure header is always on top */
+.site-header {
+  z-index: var(--z-header) !important;
+}
+
+.menu-overlay {
+  z-index: calc(var(--z-header) - 1) !important;
+}

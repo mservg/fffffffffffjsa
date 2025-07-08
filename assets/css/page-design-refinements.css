@@ -1,0 +1,752 @@
+/**
+ * Page Design Refinements for Jocelyne Saab Theme
+ * Comprehensive improvements for galleries and overall page design
+ * Author: Enhanced by AI Assistant
+ * Date: 2025-01-27
+ * Version: 2.0.0
+ */
+
+/* ========================================
+   GLOBAL PAGE IMPROVEMENTS
+   ======================================== */
+
+/* Ensure consistent spacing and layout */
+.site-main {
+    min-height: 100vh !important;
+    background: var(--brand-white) !important;
+}
+
+/* Improved container spacing */
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 var(--spacing-lg) !important;
+}
+
+/* Enhanced section spacing */
+.section,
+.section-enhanced,
+.section-white,
+.section-cream,
+.section-dark,
+.section-midnight {
+    padding: var(--spacing-xxl) 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.section::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent 0%, var(--gray-light) 50%, transparent 100%) !important;
+    z-index: 1 !important;
+}
+
+/* ========================================
+   ENHANCED GALLERY DESIGNS
+   ======================================== */
+
+/* Modern gallery grid */
+.gallery,
+.wp-block-gallery,
+.gallery-grid,
+.partner-grid,
+.film-gallery,
+.workshop-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: var(--spacing-lg) !important;
+    margin: var(--spacing-xl) 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+/* Gallery items */
+.gallery-item,
+.wp-block-image,
+.gallery-grid-item,
+.partner-grid-item,
+.film-gallery-item,
+.workshop-gallery-item {
+    position: relative !important;
+    background: var(--brand-white) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: all var(--transition-normal) !important;
+    border: 2px solid transparent !important;
+    aspect-ratio: 4/3 !important;
+}
+
+.gallery-item:hover,
+.wp-block-image:hover,
+.gallery-grid-item:hover,
+.partner-grid-item:hover,
+.film-gallery-item:hover,
+.workshop-gallery-item:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+    border-color: var(--brand-yellow) !important;
+}
+
+/* Gallery images */
+.gallery-item img,
+.wp-block-image img,
+.gallery-grid-item img,
+.partner-grid-item img,
+.film-gallery-item img,
+.workshop-gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transition: transform var(--transition-slow) !important;
+    border-radius: 14px !important;
+}
+
+.gallery-item:hover img,
+.wp-block-image:hover img,
+.gallery-grid-item:hover img,
+.partner-grid-item:hover img,
+.film-gallery-item:hover img,
+.workshop-gallery-item:hover img {
+    transform: scale(1.05) !important;
+}
+
+/* Gallery captions */
+.gallery-caption,
+.wp-block-image figcaption,
+.gallery-item-caption {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)) !important;
+    color: var(--brand-white) !important;
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md) !important;
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    transform: translateY(100%) !important;
+    transition: transform var(--transition-normal) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.gallery-item:hover .gallery-caption,
+.wp-block-image:hover figcaption,
+.gallery-item:hover .gallery-item-caption {
+    transform: translateY(0) !important;
+}
+
+/* ========================================
+   ENHANCED GRID LAYOUTS
+   ======================================== */
+
+/* Partner grid specific styling */
+.partner-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: var(--spacing-md) !important;
+}
+
+.partner-grid-item {
+    aspect-ratio: 3/2 !important;
+    background: linear-gradient(135deg, var(--brand-white) 0%, #f8f9fa 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: var(--spacing-md) !important;
+    border: 1px solid var(--gray-light) !important;
+}
+
+.partner-grid-item img {
+    max-width: 80% !important;
+    max-height: 80% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    filter: grayscale(100%) !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.partner-grid-item:hover img {
+    filter: grayscale(0%) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Film gallery masonry layout */
+.film-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    grid-auto-rows: 200px !important;
+    gap: var(--spacing-md) !important;
+}
+
+.film-gallery-item:nth-child(3n) {
+    grid-row: span 2 !important;
+}
+
+.film-gallery-item:nth-child(5n) {
+    grid-column: span 2 !important;
+}
+
+/* ========================================
+   ENHANCED CONTENT SECTIONS
+   ======================================== */
+
+/* Improved section headers */
+.section-header,
+.section-header-enhanced {
+    text-align: center !important;
+    margin-bottom: var(--spacing-xxl) !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+}
+
+.section-header::after,
+.section-header-enhanced::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -var(--spacing-lg) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100px !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--brand-yellow) 0%, var(--brand-blue) 100%) !important;
+    border-radius: 2px !important;
+}
+
+/* Enhanced typography */
+.section-title,
+.section-title-enhanced {
+    font-family: var(--font-heading) !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin-bottom: var(--spacing-md) !important;
+    color: var(--brand-midnight) !important;
+    position: relative !important;
+}
+
+.section-subtitle,
+.section-subtitle-enhanced {
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+    color: var(--gray-dark) !important;
+    font-weight: 400 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ========================================
+   ENHANCED BUTTONS AND ACTIONS
+   ======================================== */
+
+.section-actions {
+    text-align: center !important;
+    margin-top: var(--spacing-xl) !important;
+}
+
+.btn-enhanced,
+.btn-enhanced-primary,
+.btn-enhanced-secondary,
+.btn-enhanced-lg {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: var(--spacing-md) var(--spacing-xl) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    border: 2px solid var(--brand-yellow) !important;
+    border-radius: 50px !important;
+    background: var(--brand-yellow) !important;
+    color: var(--brand-midnight) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3) !important;
+    min-width: 200px !important;
+}
+
+.btn-enhanced::before,
+.btn-enhanced-primary::before,
+.btn-enhanced-secondary::before,
+.btn-enhanced-lg::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+    transition: left var(--transition-slow) !important;
+}
+
+.btn-enhanced:hover::before,
+.btn-enhanced-primary:hover::before,
+.btn-enhanced-secondary:hover::before,
+.btn-enhanced-lg:hover::before {
+    left: 100% !important;
+}
+
+.btn-enhanced:hover,
+.btn-enhanced-primary:hover,
+.btn-enhanced-secondary:hover,
+.btn-enhanced-lg:hover {
+    background: var(--brand-midnight) !important;
+    color: var(--brand-white) !important;
+    border-color: var(--brand-midnight) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-enhanced-lg {
+    padding: var(--spacing-lg) var(--spacing-xxl) !important;
+    font-size: 1.125rem !important;
+    min-width: 250px !important;
+}
+
+.btn-enhanced-secondary {
+    background: transparent !important;
+    color: var(--brand-yellow) !important;
+    border-color: var(--brand-yellow) !important;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2) !important;
+}
+
+.btn-enhanced-secondary:hover {
+    background: var(--brand-yellow) !important;
+    color: var(--brand-midnight) !important;
+}
+
+/* ========================================
+   ENHANCED CONTENT BLOCKS
+   ======================================== */
+
+/* Content blocks with improved styling */
+.content-block,
+.text-block,
+.image-text-block {
+    background: var(--brand-white) !important;
+    border-radius: 16px !important;
+    padding: var(--spacing-xl) !important;
+    margin: var(--spacing-xl) 0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid var(--gray-light) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.content-block::before,
+.text-block::before,
+.image-text-block::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--brand-yellow) 0%, var(--brand-blue) 100%) !important;
+}
+
+/* Enhanced blockquotes */
+blockquote {
+    background: linear-gradient(135deg, var(--brand-cream) 0%, #f5f5f0 100%) !important;
+    border-left: 4px solid var(--brand-yellow) !important;
+    border-radius: 0 12px 12px 0 !important;
+    padding: var(--spacing-lg) var(--spacing-xl) !important;
+    margin: var(--spacing-xl) 0 !important;
+    font-style: italic !important;
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+    color: var(--brand-midnight) !important;
+    position: relative !important;
+}
+
+blockquote::before {
+    content: '"' !important;
+    font-size: 4rem !important;
+    color: var(--brand-yellow) !important;
+    position: absolute !important;
+    top: -10px !important;
+    left: var(--spacing-md) !important;
+    font-family: serif !important;
+    line-height: 1 !important;
+}
+
+blockquote p {
+    margin: 0 !important;
+    padding-left: var(--spacing-lg) !important;
+}
+
+/* ========================================
+   ENHANCED FORMS AND INPUTS
+   ======================================== */
+
+.form-group,
+.contact-form-group {
+    margin-bottom: var(--spacing-lg) !important;
+}
+
+.form-label,
+.contact-form-label {
+    display: block !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
+    margin-bottom: var(--spacing-xs) !important;
+    color: var(--brand-midnight) !important;
+}
+
+.form-input,
+.form-textarea,
+.contact-form-input,
+.contact-form-textarea {
+    width: 100% !important;
+    padding: var(--spacing-md) !important;
+    border: 2px solid var(--gray-light) !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    background: var(--brand-white) !important;
+    color: var(--brand-midnight) !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+    outline: none !important;
+    border-color: var(--brand-yellow) !important;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2) !important;
+}
+
+.form-textarea,
+.contact-form-textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN IMPROVEMENTS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .gallery,
+    .wp-block-gallery,
+    .gallery-grid,
+    .partner-grid,
+    .film-gallery,
+    .workshop-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: var(--spacing-md) !important;
+    }
+    
+    .section-title,
+    .section-title-enhanced {
+        font-size: 2.2rem !important;
+    }
+    
+    .section-subtitle,
+    .section-subtitle-enhanced {
+        font-size: 1.125rem !important;
+    }
+    
+    .content-block,
+    .text-block,
+    .image-text-block {
+        padding: var(--spacing-lg) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md) !important;
+    }
+    
+    .section,
+    .section-enhanced,
+    .section-white,
+    .section-cream,
+    .section-dark,
+    .section-midnight {
+        padding: var(--spacing-xl) 0 !important;
+    }
+    
+    .gallery,
+    .wp-block-gallery,
+    .gallery-grid,
+    .partner-grid,
+    .film-gallery,
+    .workshop-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        gap: var(--spacing-sm) !important;
+    }
+    
+    .partner-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    }
+    
+    .film-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        grid-auto-rows: 180px !important;
+    }
+    
+    .film-gallery-item:nth-child(3n),
+    .film-gallery-item:nth-child(5n) {
+        grid-row: span 1 !important;
+        grid-column: span 1 !important;
+    }
+    
+    .section-title,
+    .section-title-enhanced {
+        font-size: 2rem !important;
+    }
+    
+    .section-subtitle,
+    .section-subtitle-enhanced {
+        font-size: 1rem !important;
+    }
+    
+    .btn-enhanced,
+    .btn-enhanced-primary,
+    .btn-enhanced-secondary {
+        padding: var(--spacing-sm) var(--spacing-lg) !important;
+        font-size: 0.875rem !important;
+        min-width: 180px !important;
+    }
+    
+    .btn-enhanced-lg {
+        padding: var(--spacing-md) var(--spacing-xl) !important;
+        font-size: 1rem !important;
+        min-width: 200px !important;
+    }
+    
+    .content-block,
+    .text-block,
+    .image-text-block {
+        padding: var(--spacing-md) !important;
+        margin: var(--spacing-lg) 0 !important;
+    }
+    
+    blockquote {
+        padding: var(--spacing-md) var(--spacing-lg) !important;
+        font-size: 1rem !important;
+    }
+    
+    blockquote::before {
+        font-size: 3rem !important;
+        top: -5px !important;
+        left: var(--spacing-sm) !important;
+    }
+    
+    blockquote p {
+        padding-left: var(--spacing-md) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm) !important;
+    }
+    
+    .gallery,
+    .wp-block-gallery,
+    .gallery-grid,
+    .partner-grid,
+    .film-gallery,
+    .workshop-gallery {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-sm) !important;
+    }
+    
+    .partner-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .section-title,
+    .section-title-enhanced {
+        font-size: 1.75rem !important;
+    }
+    
+    .section-subtitle,
+    .section-subtitle-enhanced {
+        font-size: 0.875rem !important;
+    }
+    
+    .btn-enhanced,
+    .btn-enhanced-primary,
+    .btn-enhanced-secondary,
+    .btn-enhanced-lg {
+        padding: var(--spacing-sm) var(--spacing-md) !important;
+        font-size: 0.75rem !important;
+        min-width: 150px !important;
+    }
+    
+    .content-block,
+    .text-block,
+    .image-text-block {
+        padding: var(--spacing-sm) !important;
+        border-radius: 12px !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY AND SPECIAL STATES
+   ======================================== */
+
+/* Focus states */
+.gallery-item:focus,
+.wp-block-image:focus,
+.gallery-grid-item:focus,
+.partner-grid-item:focus,
+.film-gallery-item:focus,
+.workshop-gallery-item:focus {
+    outline: 3px solid var(--brand-yellow) !important;
+    outline-offset: 2px !important;
+}
+
+.btn-enhanced:focus,
+.btn-enhanced-primary:focus,
+.btn-enhanced-secondary:focus,
+.btn-enhanced-lg:focus {
+    outline: 3px solid var(--brand-yellow) !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .gallery-item,
+    .wp-block-image,
+    .gallery-grid-item,
+    .partner-grid-item,
+    .film-gallery-item,
+    .workshop-gallery-item,
+    .content-block,
+    .text-block,
+    .image-text-block {
+        border-width: 3px !important;
+    }
+    
+    .btn-enhanced,
+    .btn-enhanced-primary,
+    .btn-enhanced-secondary,
+    .btn-enhanced-lg {
+        border-width: 3px !important;
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus,
+    .contact-form-input:focus,
+    .contact-form-textarea:focus {
+        box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.5) !important;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item,
+    .wp-block-image,
+    .gallery-grid-item,
+    .partner-grid-item,
+    .film-gallery-item,
+    .workshop-gallery-item,
+    .btn-enhanced,
+    .btn-enhanced-primary,
+    .btn-enhanced-secondary,
+    .btn-enhanced-lg,
+    .form-input,
+    .form-textarea,
+    .contact-form-input,
+    .contact-form-textarea {
+        transition: none !important;
+    }
+    
+    .gallery-item:hover,
+    .wp-block-image:hover,
+    .gallery-grid-item:hover,
+    .partner-grid-item:hover,
+    .film-gallery-item:hover,
+    .workshop-gallery-item:hover {
+        transform: none !important;
+    }
+    
+    .gallery-item:hover img,
+    .wp-block-image:hover img,
+    .gallery-grid-item:hover img,
+    .partner-grid-item:hover img,
+    .film-gallery-item:hover img,
+    .workshop-gallery-item:hover img {
+        transform: none !important;
+    }
+    
+    .btn-enhanced:hover,
+    .btn-enhanced-primary:hover,
+    .btn-enhanced-secondary:hover,
+    .btn-enhanced-lg:hover {
+        transform: none !important;
+    }
+    
+    .btn-enhanced::before,
+    .btn-enhanced-primary::before,
+    .btn-enhanced-secondary::before,
+    .btn-enhanced-lg::before {
+        display: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .gallery,
+    .wp-block-gallery,
+    .gallery-grid,
+    .partner-grid,
+    .film-gallery,
+    .workshop-gallery {
+        display: block !important;
+        columns: 2 !important;
+        column-gap: var(--spacing-md) !important;
+    }
+    
+    .gallery-item,
+    .wp-block-image,
+    .gallery-grid-item,
+    .partner-grid-item,
+    .film-gallery-item,
+    .workshop-gallery-item {
+        break-inside: avoid !important;
+        margin-bottom: var(--spacing-md) !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: 1px solid var(--gray-dark) !important;
+    }
+    
+    .gallery-caption,
+    .wp-block-image figcaption,
+    .gallery-item-caption {
+        position: static !important;
+        background: var(--brand-white) !important;
+        color: var(--brand-midnight) !important;
+        transform: none !important;
+        padding: var(--spacing-sm) !important;
+        border-top: 1px solid var(--gray-light) !important;
+    }
+    
+    .btn-enhanced,
+    .btn-enhanced-primary,
+    .btn-enhanced-secondary,
+    .btn-enhanced-lg {
+        background: var(--brand-white) !important;
+        color: var(--brand-midnight) !important;
+        border: 2px solid var(--brand-midnight) !important;
+        box-shadow: none !important;
+    }
+}
+
