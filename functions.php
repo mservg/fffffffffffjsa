@@ -240,7 +240,9 @@ function saab_scripts() {
     wp_enqueue_style('saab-carousel-refinements', get_template_directory_uri() . '/assets/css/carousel-design-refinements.css', array('saab-hero-fixes'), '1.0.0');
     
     // Page design refinements CSS
-    wp_enqueue_style('saab-page-refinements', get_template_directory_uri() . '/assets/css/page-design-refinements.css', array('saab-carousel-refinements'), '1.0.0');    
+    wp_enqueue_style('saab-page-refinements', get_template_directory_uri() . '/assets/css/page-design-refinements.css', array('saab-carousel-refinements'), '1.0.0');
+    wp_enqueue_style('saab-custom', get_template_directory_uri() . '/assets/css/custom.css', array('saab-page-refinements'), '1.0.0');
+    wp_enqueue_style('saab-animations', get_template_directory_uri() . '/assets/css/animations.css', array('saab-custom'), '1.0.0');
     // Google Fonts - Only Epilogue and Lora
     wp_enqueue_style('saab-fonts', 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap', array(), null);
     

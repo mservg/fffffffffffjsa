@@ -5,12 +5,14 @@
  * @package Saab
  */
 
-// Get hero background options from customizer
-$hero_bg_type = get_theme_mod('hero_bg_type', 'video');
-$hero_bg_image = get_theme_mod('hero_bg_image');
-$hero_bg_video = get_theme_mod('hero_bg_video', 'https://jocelynesaab.org/wp-content/uploads/2025/04/header_beyrouth_ma_ville_2_1.mp4');
-$hero_cta_text = get_theme_mod('hero_cta_text', __('Explore Our Work', 'saab'));
-$hero_cta_url = get_theme_mod('hero_cta_url', '#latest-news');
+// Get hero media from custom fields or meta
+$hero_bg_video = get_post_meta(get_the_ID(), '_saab_hero_video', true);
+$hero_bg_image = get_post_meta(get_the_ID(), '_saab_hero_image', true);
+$hero_title     = get_post_meta(get_the_ID(), '_saab_hero_title', true);
+$hero_subtitle  = get_post_meta(get_the_ID(), '_saab_hero_subtitle', true);
+$hero_cta_text  = __('Explore Our Work', 'saab');
+$hero_cta_url   = '#latest-news';
+$hero_bg_type   = $hero_bg_video ? 'video' : 'image';
 
 // Fallback to featured image from a page called "Home" if no customizer settings
 if (!$hero_bg_image) {
@@ -74,10 +76,14 @@ $site_description = get_bloginfo('description');
         <div class="container">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <?php echo esc_html($site_name ?: 'Jocelyne Saab Association'); ?>
+                    <?php echo esc_html($hero_title ? $hero_title : $site_name); ?>
                 </h1>
-                
-                <?php if ($site_description) : ?>
+
+                <?php if ($hero_subtitle) : ?>
+                    <div class="hero-subtitle">
+                        <?php echo esc_html($hero_subtitle); ?>
+                    </div>
+                <?php elseif ($site_description) : ?>
                     <div class="hero-subtitle">
                         <?php echo esc_html($site_description); ?>
                     </div>
