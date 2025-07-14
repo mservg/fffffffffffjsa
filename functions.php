@@ -230,17 +230,20 @@ function saab_scripts() {
         // Enhanced CSS file
     wp_enqueue_style('saab-enhanced-css', get_template_directory_uri() . '/assets/css/enhanced-styles.css', array('saab-main-css'), '1.0.0');
     
-    // Header fixes CSS
-    wp_enqueue_style('saab-header-fixes', get_template_directory_uri() . '/assets/css/header-fixes.css', array('saab-enhanced-css'), '1.0.0');
+    // Header fixes CSS - Version 2
+    wp_enqueue_style('saab-header-fixes', get_template_directory_uri() . '/assets/css/header-fixes-v2.css', array('saab-enhanced-css'), '2.0.0');
     
-    // Hero fixes CSS
-    wp_enqueue_style('saab-hero-fixes', get_template_directory_uri() . '/assets/css/hero-fixes.css', array('saab-header-fixes'), '1.0.0');
+    // Hero fixes CSS - Version 2
+    wp_enqueue_style('saab-hero-fixes', get_template_directory_uri() . '/assets/css/hero-fixes-v2.css', array('saab-header-fixes'), '2.0.0');
     
-    // Carousel design refinements CSS
-    wp_enqueue_style('saab-carousel-refinements', get_template_directory_uri() . '/assets/css/carousel-design-refinements.css', array('saab-hero-fixes'), '1.0.0');
+    // Carousel design refinements CSS - Version 2
+    wp_enqueue_style('saab-carousel-refinements', get_template_directory_uri() . '/assets/css/carousel-design-refinements-v2.css', array('saab-hero-fixes'), '2.0.0');
     
     // Page design refinements CSS
-    wp_enqueue_style('saab-page-refinements', get_template_directory_uri() . '/assets/css/page-design-refinements.css', array('saab-carousel-refinements'), '1.0.0');    
+    wp_enqueue_style('saab-page-refinements', get_template_directory_uri() . '/assets/css/page-design-refinements.css', array('saab-carousel-refinements'), '1.0.0');
+    
+    // General polish CSS - Version 2 (additional refinements)
+    wp_enqueue_style('saab-general-polish', get_template_directory_uri() . '/assets/css/general-polish-v2.css', array('saab-page-refinements'), '2.0.0');    
     // Google Fonts - Only Epilogue and Lora
     wp_enqueue_style('saab-fonts', 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap', array(), null);
     
